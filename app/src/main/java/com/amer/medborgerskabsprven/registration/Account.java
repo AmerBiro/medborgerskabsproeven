@@ -14,22 +14,19 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.amer.medborgerskabsprven.R;
-import com.amer.medborgerskabsprven.databinding.RegistrationCreateAccountBinding;
+import com.amer.medborgerskabsprven.databinding.RegistrationAccountBinding;
 import com.amer.medborgerskabsprven.logic.FieldChecker;
 import com.amer.medborgerskabsprven.logic.User;
 
-public class CreateAccount extends Fragment {
+public class Account extends Fragment {
 
-    private @NonNull RegistrationCreateAccountBinding binding;
+    private @NonNull RegistrationAccountBinding binding;
     private NavController controller;
-    private FieldChecker checker;
-    private EditText[] fields;
-    private String[] errorMessage;
     private User user;
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = RegistrationCreateAccountBinding.inflate(inflater, container, false);
+        binding = RegistrationAccountBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         return view;
     }
@@ -38,31 +35,19 @@ public class CreateAccount extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         controller = Navigation.findNavController(view);
-        controller = Navigation.findNavController(view);
-        checker = new FieldChecker();
-        fields = new EditText[2];
-        errorMessage = new String[2];
-        fields[0] = binding.edittextCreateAccountUsername;
-        fields[1] = binding.edittextCreateAccountPassword;
-        errorMessage[0] = "Enter a username";
-        errorMessage[1] = "Enter a password";
         user = new User(getActivity(), view);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        binding.buttonCreateAccountCreateAccount.setOnClickListener(new View.OnClickListener() {
+
+        binding.logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createAccount();
+                user.signOut(R.id.action_Account_to_registration);
             }
         });
-    }
 
-    private void createAccount() {
-        if (!checker.isEmpty(fields, errorMessage)) {
-            user.createUser(fields[0], fields[1], R.id.action_createAccount_to_questionsList);
-        }
     }
 }

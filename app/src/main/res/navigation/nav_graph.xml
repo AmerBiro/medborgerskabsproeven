@@ -44,5 +44,19 @@
         android:id="@+id/questionsList"
         android:name="com.amer.medborgerskabsprven.questions.QuestionsList"
         android:label="question_questions_list"
-        tools:layout="@layout/question_questions_list" />
+        tools:layout="@layout/question_questions_list" >
+        <action
+            android:id="@+id/action_questionsList_to_Account"
+            app:destination="@id/Account" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Account"
+        android:name="com.amer.medborgerskabsprven.registration.Account"
+        android:label="registration_account"
+        tools:layout="@layout/registration_account" >
+        <action
+            android:id="@+id/action_Account_to_registration"
+            app:destination="@id/registration" />
+    </fragment>
 </navigation>

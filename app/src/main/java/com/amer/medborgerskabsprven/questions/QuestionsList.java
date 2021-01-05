@@ -8,8 +8,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,10 +24,15 @@ import com.amer.medborgerskabsprven.R;
 import com.amer.medborgerskabsprven.databinding.QuestionQuestionsListBinding;
 import com.amer.medborgerskabsprven.databinding.RegistrationAccountBinding;
 import com.amer.medborgerskabsprven.logic.AlertDialogViewer;
+import com.amer.medborgerskabsprven.mvvm.QuestionsListAdapter;
+import com.amer.medborgerskabsprven.mvvm.QuestionsListModel;
+import com.amer.medborgerskabsprven.mvvm.QuestionsListViewModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.List;
 
 public class QuestionsList extends Fragment {
 
@@ -33,6 +42,10 @@ public class QuestionsList extends Fragment {
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private AlertDialogViewer dialogViewer;
+
+    private RecyclerView recyclerView;
+    private QuestionsListViewModel questionsListViewModel;
+    private QuestionsListAdapter adapter;
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,6 +61,11 @@ public class QuestionsList extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         dialogViewer = new AlertDialogViewer(getActivity(), view);
+        recyclerView = binding.recyclerview;
+        adapter = new QuestionsListAdapter();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -59,7 +77,19 @@ public class QuestionsList extends Fragment {
                 dialogViewer.logInOrCreateAccount();
             }
         });
+    }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        questionsListViewModel = new ViewModelProvider(getActivity()).get(QuestionsListViewModel.class);
+        questionsListViewModel.getQuestionsListModelData().observe(getViewLifecycleOwner(), new Observer<List<QuestionsListModel>>() {
+            @Override
+            public void onChanged(List<QuestionsListModel> questionsListModels) {
+                adapter.setQuestionsListsModels(questionsListModels);
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 
 }

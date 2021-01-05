@@ -48,6 +48,12 @@
         <action
             android:id="@+id/action_questionsList_to_Account"
             app:destination="@id/Account" />
+        <action
+            android:id="@+id/action_questionsList_to_registration"
+            app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_questionsList_to_createAccount"
+            app:destination="@id/createAccount" />
     </fragment>
 
     <fragment

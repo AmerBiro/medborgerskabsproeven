@@ -2,4 +2,34 @@
     <string name="app_name">Medborgerskabsprøven</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="splash_screen_title">Medborgerskabsprøven</string>
+    <string name="splash_screen_status">status...</string>
+
+    <string name="registration_title">Registration</string>
+    <string name="registration_username">Username</string>
+    <string name="registration_password">Password</string>
+    <string name="registration_guest">Continue as a guest</string>
+    <string name="registration_sign_in">Log in</string>
+    <string name="registration_create_account">Create account</string>
+    <string name="registration_reset_password">Forgot password?</string>
+
+    <string name="create_account_title">Create account</string>
+    <string name="create_account_username">Username</string>
+    <string name="create_account_password">Password</string>
+    <string name="create_account_create_account">Create a new account</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>

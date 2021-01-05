@@ -3,37 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registration.CreateAccount"
+    tools:context=".registration.SplashScreen"
     android:orientation="vertical"
     >
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_account_title"
-        style="@style/title"
+        android:text="@string/app_name"
+        style="@style/splash_screen_title"
         />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/create_account_username"
-        style="@style/field"
+        android:indeterminateTint="@color/field"
+        android:layout_marginTop="200dp"
         />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/create_account_password"
-        style="@style/field"
+        android:text="@string/splash_screen_status"
+        style="@style/splash_screen_status"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create_account_create_account"
-        style="@style/button"
-        />
 
 
 

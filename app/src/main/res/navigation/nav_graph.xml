@@ -11,6 +11,8 @@
         android:label="registration_splash_screen"
         tools:layout="@layout/registration_splash_screen" >
         <action
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/splashScreen"
             android:id="@+id/action_splashScreen_to_registration"
             app:destination="@id/registration" />
         <action

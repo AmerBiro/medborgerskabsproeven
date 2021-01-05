@@ -52,7 +52,6 @@ public class SplashScreen extends Fragment {
     }
 
     public void checkUser() {
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

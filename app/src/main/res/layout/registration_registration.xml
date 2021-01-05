@@ -15,20 +15,23 @@
         />
 
     <EditText
+        android:id="@+id/edittext_registration_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/registration_username"
-        style="@style/field"
+        style="@style/field_username"
         />
 
     <EditText
+        android:id="@+id/edittext_registration_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/registration_password"
-        style="@style/field"
+        style="@style/field_password"
         />
 
     <Button
+        android:id="@+id/button_registration_guest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registration_guest"
@@ -36,6 +39,7 @@
         />
 
     <Button
+        android:id="@+id/button_registration_log_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registration_sign_in"
@@ -43,12 +47,14 @@
         />
 
     <Button
+        android:id="@+id/button_registration_create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registration_create_account"
         style="@style/button"
         />
     <TextView
+        android:id="@+id/button_registration_reset_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/reset_password"

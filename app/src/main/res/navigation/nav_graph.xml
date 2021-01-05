@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.amer.medborgerskabsprven.registration.SplashScreen"
+        android:label="registration_splash_screen"
+        tools:layout="@layout/registration_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_registration"
+            app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_splashScreen_to_questionsList"
+            app:destination="@id/questionsList" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.amer.medborgerskabsprven.registration.Registration"
+        android:label="registration_registration"
+        tools:layout="@layout/registration_registration" >
+        <action
+            android:id="@+id/action_registration_to_createAccount"
+            app:destination="@id/createAccount" />
+        <action
+            android:id="@+id/action_registration_to_questionsList"
+            app:destination="@id/questionsList" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccount"
+        android:name="com.amer.medborgerskabsprven.registration.CreateAccount"
+        android:label="registration_create_account"
+        tools:layout="@layout/registration_create_account" >
+        <action
+            android:id="@+id/action_createAccount_to_questionsList"
+            app:destination="@id/questionsList" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsList"
+        android:name="com.amer.medborgerskabsprven.questions.QuestionsList"
+        android:label="question_questions_list"
+        tools:layout="@layout/question_questions_list" />
+</navigation>

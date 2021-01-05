@@ -15,26 +15,27 @@
         />
 
     <EditText
+        android:id="@+id/edittext_create_account_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/create_account_username"
-        style="@style/field"
+        style="@style/field_username"
         />
 
     <EditText
+        android:id="@+id/edittext_create_account_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/create_account_password"
-        style="@style/field"
+        style="@style/field_username"
         />
 
     <Button
+        android:id="@+id/button_create_account_create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_account_create_account"
         style="@style/button"
         />
-
-
 
 </LinearLayout>

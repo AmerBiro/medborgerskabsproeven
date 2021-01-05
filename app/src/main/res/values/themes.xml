@@ -69,7 +69,7 @@
         <item name="textAllCaps">false</item>
     </style>
 
-    <style name="field">
+    <style name="field_username">
         <item name="fontFamily">@font/work_sans</item>
         <item name="android:textSize" > 24sp </item>
         <item name="android:layout_gravity">center</item>
@@ -80,6 +80,19 @@
         <item name="android:textAlignment">textStart</item>
         <item name="android:background">@drawable/field</item>
         <item name="android:inputType">text</item>
+    </style>
+
+    <style name="field_password">
+        <item name="fontFamily">@font/work_sans</item>
+        <item name="android:textSize" > 24sp </item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:textColor">@color/field</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:background">@drawable/field</item>
+        <item name="android:inputType">textPassword</item>
     </style>
 
     <style name="reset_password">

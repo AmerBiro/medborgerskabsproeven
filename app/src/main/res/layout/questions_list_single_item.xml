@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/questions_list_single_item_button"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10sp"
-    android:layout_marginLeft="24sp"
-    android:layout_marginRight="24sp"
-    android:padding="10dp"
-    android:background="@drawable/questions_list_background"
     android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:background="@drawable/questions_list_background"
     >
-
-    <TextView
-        android:id="@+id/questions_list_single_item_year"
-        style="@style/questions_list_single_item_sub_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Year..." />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="1dp"
         >
 
-        <ImageView
-            android:id="@+id/questions_list_single_item_placeholder"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:background="@drawable/placeholder_image"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            tools:ignore="MissingConstraints"
+            app:cardCornerRadius="8dp"
+            >
 
+            <ImageView
+                android:id="@+id/questions_list_single_item_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/placeholder_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.cardview.widget.CardView>
         <View
             android:layout_width="wrap_content"
             android:layout_height="56dp"
@@ -42,22 +41,54 @@
             android:translationZ="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
+            app:layout_constraintStart_toStartOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
     <TextView
-        android:id="@+id/questions_list_single_item_title"
-        style="@style/questions_list_single_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title" />
+        android:text="Quiz Title"
+        style="@style/questions_list_single_item_title"
+        />
+    <TextView
+        android:id="@+id/questions_list_single_item_title"
+        style="@style/questions_list_single_item_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title..." />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz Description"
+        style="@style/questions_list_single_item_title"
+        />
     <TextView
         android:id="@+id/questions_list_single_item_note"
         style="@style/questions_list_single_item_sub_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Note..." />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz Year"
+        style="@style/questions_list_single_item_title"
+        />
+
+    <TextView
+        android:id="@+id/questions_list_single_item_year"
+        style="@style/questions_list_single_item_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year..."
+        android:paddingBottom="10dp"
+        />
+
 
 </LinearLayout>

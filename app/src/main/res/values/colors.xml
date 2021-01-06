@@ -15,8 +15,8 @@
     <color name="field">#2F80ED</color>
     <color name="bottom_app_bar">#2F80ED</color>
     <color name="button">#FFFFFF</color>
-    <color name="single_questions_list_background">#2F80ED</color>
-    <color name="single_questions_list_frame">#FFFFFF</color>
+    <color name="single_questions_list_background">@color/white</color>
+    <color name="single_questions_list_frame">@color/black</color>
 
 
 </resources>

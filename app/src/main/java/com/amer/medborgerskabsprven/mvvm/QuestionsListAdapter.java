@@ -43,8 +43,8 @@ public class QuestionsListAdapter extends RecyclerView.Adapter <QuestionsListAda
 
     @Override
     public void onBindViewHolder(@NonNull QuestionsListViewHolder holder, int position) {
-        holder.title.setText("Title\n"+questionsListModel.get(position).getTitle());
-        holder.year.setText("Year: " + questionsListModel.get(position).getYear());
+        holder.title.setText(questionsListModel.get(position).getTitle());
+        holder.year.setText( questionsListModel.get(position).getYear());
 
         String note = questionsListModel.get(position).getNote();
         if (note.length() > 25){
@@ -52,7 +52,7 @@ public class QuestionsListAdapter extends RecyclerView.Adapter <QuestionsListAda
             note = note + " ...";
         }
 
-        holder.note.setText("Important note\n" + questionsListModel.get(position).getNote());
+        holder.note.setText(questionsListModel.get(position).getNote());
 
         Glide
                 .with(holder.itemView.getContext())

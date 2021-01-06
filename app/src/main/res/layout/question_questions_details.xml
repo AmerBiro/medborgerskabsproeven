@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/questions_list_single_item_button"
+    tools:context=".questions.QuestionsDetails"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".questions.QuestionsDetails">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="300dp"
+        >
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/placeholder_image"
+            />
+    </androidx.cardview.widget.CardView>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz Title"
+        style="@style/questions_details_title"
+        />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/questions_details_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz Description"
+        style="@style/questions_details_title"
+        />
+
+    <TextView
+        android:id="@+id/note"
+        style="@style/questions_details_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note..."
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz Year"
+        style="@style/questions_details_title"
+        />
+
+    <TextView
+        android:id="@+id/year"
+        style="@style/questions_details_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year..."
+        />
+
+</LinearLayout>

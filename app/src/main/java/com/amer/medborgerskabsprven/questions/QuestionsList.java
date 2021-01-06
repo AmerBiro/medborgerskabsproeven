@@ -15,6 +15,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +36,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
-public class QuestionsList extends Fragment {
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
+public class QuestionsList extends Fragment implements QuestionsListAdapter.OnQuestionsListItemClicked {
 
 
     private @NonNull QuestionQuestionsListBinding binding;
@@ -62,7 +66,7 @@ public class QuestionsList extends Fragment {
         firebaseUser = firebaseAuth.getCurrentUser();
         dialogViewer = new AlertDialogViewer(getActivity(), view);
         recyclerView = binding.recyclerview;
-        adapter = new QuestionsListAdapter();
+        adapter = new QuestionsListAdapter(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
@@ -79,6 +83,7 @@ public class QuestionsList extends Fragment {
         });
     }
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -92,4 +97,11 @@ public class QuestionsList extends Fragment {
         });
     }
 
+    @Override
+    public void onItemClicked(int position) {
+        QuestionsListDirections.ActionQuestionsListToQuestionsDetails action =
+                QuestionsListDirections.actionQuestionsListToQuestionsDetails();
+        action.setPosition(position);
+        controller.navigate(action);
+    }
 }

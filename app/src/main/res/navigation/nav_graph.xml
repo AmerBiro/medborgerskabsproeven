@@ -54,6 +54,14 @@
         <action
             android:id="@+id/action_questionsList_to_createAccount"
             app:destination="@id/createAccount" />
+        <action
+            android:id="@+id/action_questionsList_to_questionsDetails"
+            app:destination="@id/questionsDetails"
+            app:enterAnim="@anim/questions_list_to_questions_details_slide_in_right"
+            app:exitAnim="@anim/questions_list_to_questions_details_slide_out_left"
+            app:popEnterAnim="@anim/questions_details_to_questions_list_slide_in_from_left"
+            app:popExitAnim="@anim/questions_details_to_questions_list_slide_out_from_right"
+            />
     </fragment>
 
     <fragment
@@ -64,5 +72,16 @@
         <action
             android:id="@+id/action_Account_to_registration"
             app:destination="@id/registration" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsDetails"
+        android:name="com.amer.medborgerskabsprven.questions.QuestionsDetails"
+        android:label="question_questions_details"
+        tools:layout="@layout/question_questions_details" >
+
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>

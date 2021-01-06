@@ -1,10 +1,15 @@
 package com.amer.medborgerskabsprven.mvvm;
 
+import android.app.Activity;
+import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,9 +19,16 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 public class QuestionsListAdapter extends RecyclerView.Adapter <QuestionsListAdapter.QuestionsListViewHolder> {
 
     private List<QuestionsListModel> questionsListModel;
+    private OnQuestionsListItemClicked onQuestionsListItemClicked;
+
+    public QuestionsListAdapter(OnQuestionsListItemClicked onQuestionsListItemClicked) {
+        this.onQuestionsListItemClicked = onQuestionsListItemClicked;
+    }
 
     public void setQuestionsListsModels(List<QuestionsListModel> questionsListModel) {
         this.questionsListModel = questionsListModel;
@@ -31,9 +43,16 @@ public class QuestionsListAdapter extends RecyclerView.Adapter <QuestionsListAda
 
     @Override
     public void onBindViewHolder(@NonNull QuestionsListViewHolder holder, int position) {
-        holder.title.setText(questionsListModel.get(position).getTitle());
-        holder.year.setText(questionsListModel.get(position).getYear());
-        holder.note.setText(questionsListModel.get(position).getNote());
+        holder.title.setText("Title\n"+questionsListModel.get(position).getTitle());
+        holder.year.setText("Year: " + questionsListModel.get(position).getYear());
+
+        String note = questionsListModel.get(position).getNote();
+        if (note.length() > 25){
+            note = note.substring(0, 25);
+            note = note + " ...";
+        }
+
+        holder.note.setText("Important note\n" + questionsListModel.get(position).getNote());
 
         Glide
                 .with(holder.itemView.getContext())
@@ -53,9 +72,10 @@ public class QuestionsListAdapter extends RecyclerView.Adapter <QuestionsListAda
     }
 
 
-    public class QuestionsListViewHolder extends RecyclerView.ViewHolder {
+    public class QuestionsListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title, year, note;
         ImageView image;
+        LinearLayout button;
 
         public QuestionsListViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,7 +83,17 @@ public class QuestionsListAdapter extends RecyclerView.Adapter <QuestionsListAda
             year = itemView.findViewById(R.id.questions_list_single_item_year);
             note = itemView.findViewById(R.id.questions_list_single_item_note);
             image = itemView.findViewById(R.id.questions_list_single_item_placeholder);
-
+            button = itemView.findViewById(R.id.questions_list_single_item_button);
+            button.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onQuestionsListItemClicked.onItemClicked(getAdapterPosition());
+        }
+    }
+
+    public interface OnQuestionsListItemClicked{
+        public void onItemClicked(int position);
     }
 }

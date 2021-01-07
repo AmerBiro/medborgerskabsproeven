@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "916594442713",
+    "project_id": "medborgerskabsproeven",
+    "storage_bucket": "medborgerskabsproeven.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916594442713:android:c5840e47063c567f4dd9c8",
+        "android_client_info": {
+          "package_name": "com.amer.medborgerskabsprven"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916594442713-gp202tjn7381a8of4r3mu8a2r9mri9bu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByNoCbhVnzss9pisXtzpmGAT8oFyOWgZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916594442713-gp202tjn7381a8of4r3mu8a2r9mri9bu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

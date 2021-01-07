@@ -23,6 +23,7 @@
             app:cardCornerRadius="8dp"
             >
 
+
             <ImageView
                 android:id="@+id/questions_list_single_item_placeholder"
                 android:layout_width="match_parent"

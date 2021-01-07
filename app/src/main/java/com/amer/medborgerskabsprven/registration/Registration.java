@@ -20,7 +20,7 @@ import com.amer.medborgerskabsprven.logic.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Registration extends Fragment {
+public class Registration extends Fragment implements View.OnClickListener {
 
     private @NonNull
     RegistrationRegistrationBinding binding;
@@ -58,39 +58,38 @@ public class Registration extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        binding.buttonRegistrationLogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });
+        binding.buttonRegistrationLogIn.setOnClickListener(this);
 
-        binding.buttonRegistrationGuest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                continueAsAGuest();
-            }
-        });
+        binding.buttonRegistrationGuest.setOnClickListener(this);
 
-        binding.buttonRegistrationCreateAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createAccount();
-            }
-        });
+        binding.buttonRegistrationCreateAccount.setOnClickListener(this);
 
-        binding.buttonRegistrationResetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resetPassword();
-            }
-        });
+        binding.buttonRegistrationResetPassword.setOnClickListener(this);
     }
 
 
     private void signIn() {
         if (!checker.isEmpty(fields, errorMessage)) {
             user.signIn(fields[0], fields[1], R.id.action_registration_to_questionsList);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_registration_log_in:
+                signIn();
+                break;
+            case R.id.button_registration_guest:
+                continueAsAGuest();
+                break;
+            case R.id.button_registration_create_account:
+                createAccount();
+                break;
+            case R.id.button_registration_reset_password:
+                resetPassword();
+                break;
+            default:
         }
     }
 
@@ -106,6 +105,5 @@ public class Registration extends Fragment {
     private void resetPassword() {
         user.resetPassword();
     }
-
 
 }

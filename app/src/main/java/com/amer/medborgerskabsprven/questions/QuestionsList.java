@@ -38,7 +38,7 @@ import java.util.List;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
-public class QuestionsList extends Fragment implements QuestionsListAdapter.OnQuestionsListItemClicked {
+public class QuestionsList extends Fragment implements QuestionsListAdapter.OnQuestionsListItemClicked, View.OnClickListener {
 
 
     private @NonNull QuestionQuestionsListBinding binding;
@@ -50,6 +50,8 @@ public class QuestionsList extends Fragment implements QuestionsListAdapter.OnQu
     private RecyclerView recyclerView;
     private QuestionsListViewModel questionsListViewModel;
     private QuestionsListAdapter adapter;
+    private String questionListId;
+
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -75,12 +77,7 @@ public class QuestionsList extends Fragment implements QuestionsListAdapter.OnQu
     @Override
     public void onStart() {
         super.onStart();
-        binding.floatingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogViewer.logInOrCreateAccount();
-            }
-        });
+        binding.floatingButton.setOnClickListener(this);
     }
 
 
@@ -103,5 +100,16 @@ public class QuestionsList extends Fragment implements QuestionsListAdapter.OnQu
                 QuestionsListDirections.actionQuestionsListToQuestionsDetails();
         action.setPosition(position);
         controller.navigate(action);
+        adapter.notifyItemChanged(position);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.floating_button:
+                dialogViewer.logInOrCreateAccount();
+                break;
+            default:
+        }
     }
 }

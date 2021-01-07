@@ -5,27 +5,30 @@ import com.google.firebase.firestore.DocumentId;
 
 public class QuestionsListModel {
 
+    @DocumentId
+    private String questionsList_Id;
+    private String image, image_url, title, year, description;
+    private long question;
 
-    private String questionsList_id, image, image_url, title, year, note;
-
-    public QuestionsListModel(String questionsList_id, String image, String image_url, String title, String year, String note) {
-        this.questionsList_id = questionsList_id;
+    public QuestionsListModel(String questionsList_Id, String image, String image_url, String title, String year, String description, long question) {
+        this.questionsList_Id = questionsList_Id;
         this.image = image;
         this.image_url = image_url;
         this.title = title;
         this.year = year;
-        this.note = note;
+        this.description = description;
+        this.question = question;
     }
 
     public QuestionsListModel() {
     }
 
-    public String getQuestionsList_id() {
-        return questionsList_id;
+    public String getQuestionsList_Id() {
+        return questionsList_Id;
     }
 
-    public void setId(String questionsList_id) {
-        this.questionsList_id = questionsList_id;
+    public void setQuestionsList_Id(String questionsList_Id) {
+        this.questionsList_Id = questionsList_Id;
     }
 
     public String getImage() {
@@ -60,11 +63,19 @@ public class QuestionsListModel {
         this.year = year;
     }
 
-    public String getNote() {
-        return note;
+    public String getDescription() {
+        return description;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public long getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(long question) {
+        this.question = question;
     }
 }

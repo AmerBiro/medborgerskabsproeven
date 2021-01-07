@@ -133,6 +133,8 @@
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">35dp</item>
+        <item name="android:inputType">textMultiLine</item>
     </style>
 
 
@@ -162,8 +164,53 @@
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:layout_marginRight">20dp</item>
     </style>
 
+
+    <style name="current_question_title">
+        <item name="fontFamily"> @font/crimson_text</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColorHint">@color/title</item>
+        <item name="android:layout_marginTop">36dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="current_question_button">
+        <item name="fontFamily"> @font/work_sans</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@color/button</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="current_question_question_number_title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/work_sans</item>
+    </style>
+
+
+    <style name="current_question_number">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="current_question_fetching_data">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/work_sans</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
 
 
 

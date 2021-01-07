@@ -20,11 +20,34 @@
     <string name="create_account_password">Password</string>
     <string name="create_account_create_account">Create</string>
 
-    <string name="questions_list_title">Questions List</string>
-
     <string name="account_title">Account</string>
     <string name="account_log_out">Log out</string>
 
+    <string name="questions_list_title">Questions List</string>
+
+    <string name="question_single_item_Title">Quiz Title</string>
+    <string name="question_single_item_title">Title ...</string>
+    <string name="question_single_item_Description">Quiz Description</string>
+    <string name="question_single_item_description">Description ...</string>
+    <string name="question_single_item_Year">Quiz Year</string>
+    <string name="question_single_item_year">Year ...</string>
+
+    <string name="question_details_Title">Quiz Title</string>
+    <string name="question_details_title">Title ...</string>
+    <string name="question_details_Description">Quiz Description</string>
+    <string name="question_details_description">Description ...</string>
+    <string name="question_details_Year">Quiz Year</string>
+    <string name="question_details_year">Year ...</string>
+    <string name="question_details_button">Start quiz</string>
+
+    <string name="current_question_title">Loading Quiz ...</string>
+    <string name="current_question_question_number">Question</string>
+    <string name="current_question_number">0</string>
+    <string name="current_question_time">10</string>
+    <string name="current_question_data_status">Fetching Data</string>
+    <string name="current_question_button">Option Button</string>
+    <string name="current_question_answer_status">Verifying Answer</string>
+    <string name="current_question_next_question">Next Question</string>
 
 
 </resources>

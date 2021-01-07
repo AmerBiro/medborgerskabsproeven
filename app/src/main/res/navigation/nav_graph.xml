@@ -83,5 +83,38 @@
             android:name="position"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_questionsDetails_to_currentQuestion"
+            app:destination="@id/currentQuestion"
+            app:popEnterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:enterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/slide_down"
+
+
+            />
     </fragment>
+    <fragment
+        android:id="@+id/currentQuestion"
+        android:name="com.amer.medborgerskabsprven.questions.CurrentQuestion"
+        android:label="question_current_question"
+        tools:layout="@layout/question_current_question" >
+        <action
+            android:id="@+id/action_currentQuestion_to_questionsResult"
+            app:destination="@id/questionsResult"
+            />
+        <argument
+            android:name="question_Id"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="total_questions"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsResult"
+        android:name="com.amer.medborgerskabsprven.questions.QuestionsResult"
+        android:label="question_questions_result"
+        tools:layout="@layout/question_questions_result" />
 </navigation>

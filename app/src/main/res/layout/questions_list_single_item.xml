@@ -50,43 +50,45 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quiz Title"
+        android:text="@string/question_single_item_Title"
         style="@style/questions_list_single_item_title"
         />
     <TextView
         android:id="@+id/questions_list_single_item_title"
         style="@style/questions_list_single_item_sub_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title..." />
+        android:text="@string/question_single_item_title"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quiz Description"
+        android:text="@string/question_single_item_Description"
         style="@style/questions_list_single_item_title"
         />
     <TextView
-        android:id="@+id/questions_list_single_item_note"
+        android:id="@+id/questions_list_single_item_description"
         style="@style/questions_list_single_item_sub_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Note..." />
+        android:text="@string/question_single_item_description"
+        />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quiz Year"
+        android:text="@string/question_single_item_Year"
         style="@style/questions_list_single_item_title"
         />
 
     <TextView
         android:id="@+id/questions_list_single_item_year"
         style="@style/questions_list_single_item_sub_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Year..."
+        android:text="@string/question_single_item_year"
         android:paddingBottom="10dp"
         />
 

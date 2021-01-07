@@ -18,7 +18,7 @@ import com.amer.medborgerskabsprven.databinding.RegistrationCreateAccountBinding
 import com.amer.medborgerskabsprven.logic.FieldChecker;
 import com.amer.medborgerskabsprven.logic.User;
 
-public class CreateAccount extends Fragment {
+public class CreateAccount extends Fragment implements View.OnClickListener {
 
     private @NonNull RegistrationCreateAccountBinding binding;
     private NavController controller;
@@ -52,17 +52,22 @@ public class CreateAccount extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        binding.buttonCreateAccountCreateAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createAccount();
-            }
-        });
+        binding.buttonCreateAccountCreateAccount.setOnClickListener(this);
     }
 
     private void createAccount() {
         if (!checker.isEmpty(fields, errorMessage)) {
             user.createUser(fields[0], fields[1], R.id.action_createAccount_to_questionsList);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_create_account_create_account:
+                createAccount();
+                break;
+            default:
         }
     }
 }
